@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>이한양 | AI Engineer 포트폴리오</title>
+  <meta name="description" content="한양대학교 인공지능학과 이한양의 포트폴리오. PyTorch 기반 딥러닝 모델 구현부터 LLM·RAG를 활용한 AI 서비스 개발까지, AI 시스템 전 과정을 직접 구현합니다." />
+  <meta name="author" content="이한양" />
+  <meta name="theme-color" content="#FFFFFF" />
+  <link rel="canonical" href="https://example-hanyang-ai.github.io/" />
+
+  <!-- Open Graph / Twitter Card -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="이한양 | AI Engineer 포트폴리오" />
+  <meta property="og:title" content="이한양 | AI Engineer 포트폴리오" />
+  <meta property="og:description" content="데이터 전처리부터 모델 학습, 서비스 구현까지 AI 시스템의 전 과정을 직접 만드는 엔지니어." />
+  <meta property="og:url" content="https://example-hanyang-ai.github.io/" />
+  <meta property="og:image" content="https://example-hanyang-ai.github.io/assets/img/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="이한양 | AI Engineer 포트폴리오" />
+  <meta name="twitter:description" content="데이터 전처리부터 모델 학습, 서비스 구현까지 AI 시스템의 전 과정을 직접 만드는 엔지니어." />
+  <meta name="twitter:image" content="https://example-hanyang-ai.github.io/assets/img/og-image.png" />
+
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml" />
+
+  <!-- figmaSans → Inter / figmaMono → JetBrains Mono (문서에 명시된 오픈소스 대체 폰트) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&family=JetBrains+Mono:wght@400;500&display=swap"
+  />
+  <link rel="stylesheet" href="assets/css/style.css" />
+
+  <!-- JSON-LD Person 스키마 -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "이한양",
+    "jobTitle": "AI Engineer",
+    "email": "mailto:lee.hanyang@example.com",
+    "url": "https://example-hanyang-ai.github.io/",
+    "sameAs": ["https://github.com/example-hanyang-ai"],
+    "alumniOf": {
+      "@type": "CollegeOrUniversity",
+      "name": "한양대학교 인공지능학과"
+    },
+    "knowsAbout": ["Machine Learning", "Deep Learning", "PyTorch", "NLP", "LLM", "RAG", "Computer Vision"]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">본문 바로가기</a>
+
+  <!-- top-nav : 흰 캔버스 · 56px · 우측 secondary + primary 필 페어 -->
+  <header class="top-nav" id="topNav">
+    <div class="container nav-inner">
+      <a class="wordmark" href="#hero">이한양</a>
+
+      <nav class="nav" id="nav" aria-label="주요 섹션">
+        <ul class="nav-list" id="navList">
+          <li><a class="nav-link" href="#about">About</a></li>
+          <li><a class="nav-link" href="#education">Education</a></li>
+          <li><a class="nav-link" href="#activities">Activities</a></li>
+          <li><a class="nav-link" href="#skills">Skills</a></li>
+          <li><a class="nav-link" href="#projects">Projects</a></li>
+          <li><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+        <div class="nav-overlay-cta">
+          <a class="btn btn-secondary" id="navMailMobile" href="#contact">이메일 문의</a>
+          <a class="btn btn-primary" id="navGithubMobile" href="#" target="_blank" rel="noopener noreferrer">GitHub 보기</a>
+        </div>
+      </nav>
+
+      <div class="nav-actions">
+        <a class="btn btn-secondary nav-cta" id="navMail" href="#contact">이메일 문의</a>
+        <a class="btn btn-primary nav-cta" id="navGithub" href="#" target="_blank" rel="noopener noreferrer">GitHub 보기</a>
+
+        <button
+          class="menu-btn"
+          id="menuToggle"
+          type="button"
+          aria-label="메뉴 열기"
+          aria-expanded="false"
+          aria-controls="nav"
+        >
+          <span class="menu-bar"></span>
+          <span class="menu-bar"></span>
+          <span class="menu-bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- HERO : 흰 캔버스 -->
+    <section class="hero" id="hero">
+      <div class="container">
+        <p class="eyebrow reveal" id="heroEyebrow"></p>
+        <h1 class="display-xl reveal" id="heroName"></h1>
+        <p class="hero-tagline reveal" id="heroTagline"></p>
+        <div class="hero-cta reveal">
+          <a class="btn btn-primary" id="heroGithub" href="#" target="_blank" rel="noopener noreferrer">GitHub 보기</a>
+          <a class="btn btn-secondary btn-outline" href="#projects">프로젝트 보기</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- marquee-strip : 검은 리본 -->
+    <div class="marquee" id="marquee" aria-hidden="true">
+      <div class="marquee-track" id="marqueeTrack"></div>
+    </div>
+
+    <!-- ABOUT : 흰 캔버스 -->
+    <section class="section" id="about">
+      <div class="container">
+        <p class="eyebrow reveal">01 — ABOUT</p>
+        <h2 class="display-lg reveal">이론을 코드로,<br />코드를 서비스로.</h2>
+        <div class="about-body" id="aboutBody"></div>
+      </div>
+    </section>
+
+    <!-- EDUCATION : 라일락 컬러블록 -->
+    <section class="section section-block" id="education">
+      <div class="container">
+        <div class="color-block color-block-lilac reveal">
+          <div class="block-inner" id="educationBody"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ACTIVITIES : 흰 캔버스 -->
+    <section class="section" id="activities">
+      <div class="container">
+        <p class="eyebrow reveal">03 — ACTIVITIES</p>
+        <h2 class="display-lg reveal">꾸준히 쌓아온<br />학습의 기록.</h2>
+        <ol class="timeline" id="activitiesList"></ol>
+      </div>
+    </section>
+
+    <!-- SKILLS : 네이비 컬러블록 (유일한 인버스 서피스) -->
+    <section class="section section-block" id="skills">
+      <div class="container">
+        <div class="color-block color-block-navy reveal">
+          <div class="block-inner">
+            <p class="eyebrow eyebrow-inverse">04 — SKILLS</p>
+            <h2 class="block-title">다룰 수 있는<br />도구들.</h2>
+            <div class="skills-grid" id="skillsGrid"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS : 흰 캔버스 + 소프트 서피스 타일 -->
+    <section class="section" id="projects">
+      <div class="container">
+        <p class="eyebrow reveal">05 — PROJECTS</p>
+        <h2 class="display-lg reveal">직접 만든<br />AI 시스템.</h2>
+        <p class="section-desc reveal">문제 정의부터 모델 구현, 성능 개선, 서비스화까지 전 과정을 수행한 프로젝트입니다.</p>
+        <div class="project-grid" id="projectGrid"></div>
+      </div>
+    </section>
+
+    <!-- PROMO BANNER : 흰 캔버스 위 라일락 배너 -->
+    <div class="container">
+      <div class="promo-banner reveal" id="promoBanner"></div>
+    </div>
+
+    <!-- CONTACT : 라임 컬러블록 -->
+    <section class="section section-block" id="contact">
+      <div class="container">
+        <div class="color-block color-block-lime reveal">
+          <div class="block-inner">
+            <p class="eyebrow">06 — CONTACT</p>
+            <h2 class="block-title">함께 만들<br />기회를 찾습니다.</h2>
+            <p class="block-subhead">채용, 인턴십, 사이드 프로젝트 어떤 이야기든 편하게 연락 주세요.</p>
+            <div class="contact-grid" id="contactGrid"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER : 흰 캔버스 · 워드마크 + 링크 그리드 -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <p class="footer-wordmark">이한양</p>
+        <p class="footer-role">AI ENGINEER</p>
+      </div>
+      <div class="footer-grid" id="footerGrid"></div>
+    </div>
+    <div class="container footer-bottom">
+      <p class="caption">© <span id="year"></span> 이한양 — AI Engineer Portfolio</p>
+      <a class="caption footer-top-link" href="#hero">BACK TO TOP ↑</a>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
